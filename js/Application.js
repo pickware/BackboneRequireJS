@@ -11,7 +11,7 @@ require.config({
 require([
 	'jquery',
 	'underscore',
-	'plugin/css!http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css',
+	'plugin/css!http://twitter.github.com/bootstrap/1.4.0/bootstrap.min',
 	'plugin/css!css/style'
 	], function($, _) {
 
