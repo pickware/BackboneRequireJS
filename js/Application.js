@@ -4,7 +4,7 @@ require.config({
 		'jquery': 'http://code.jquery.com/jquery-1.7.0.min',
 		'underscore': 'http://documentcloud.github.com/underscore/underscore-min',
 		'plugin/css': 'https://raw.github.com/VIISON/RequireCSS/master/css',
-		'plugin/text':	'http://requirejs.org/docs/release/1.0.0/minified/text'
+		'plugin/text':	'http://requirejs.org/docs/release/1.0.1/minified/text'
 	}
 });
 
