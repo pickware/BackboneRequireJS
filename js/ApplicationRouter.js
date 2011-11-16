@@ -42,37 +42,20 @@ define([
 			this.currentView = view;
 		},
 
-		/*
-		 * Change the active element in the topbar 
-		 */
-		setActiveEntry: function(url) {
-			// Unmark all entries
-			$('li').removeClass('active');
-
-			if (url) {
-				// Mark active entry
-				$("li a[href='" + url + "']").parents('li').addClass('active');					
-			}
-		},
-
 		home: function() {
 			this.switchView(this.homeView);
-			this.setActiveEntry(null);
 		},
 
 		lorem: function() {
 			this.switchView(this.loremView);
-			this.setActiveEntry('#lorem');
 		},
 
 		at: function() {
 			this.switchView(this.atView);
-			this.setActiveEntry('#at');
 		},
 
 		duis: function() {
 			this.switchView(this.duisView);
-			this.setActiveEntry('#duis');
 		},
 
 		notFound: function() {
