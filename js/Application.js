@@ -12,10 +12,10 @@ require.config({
 require([
 	'jquery',
 	'backbone',
-	'views/NavView',
+	'views/NavigationView',
 	'plugin/css!http://twitter.github.com/bootstrap/1.4.0/bootstrap.min',
 	'plugin/css!css/style'
-	], function($, Backbone, NavView) {
+	], function($, Backbone, NavigationView) {
 		// Override View.remove()'s default behavior
 		Backbone.View = Backbone.View.extend({
 			remove: function() {
@@ -29,7 +29,7 @@ require([
 		require(['backbone', 'js/ApplicationRouter'], function(Backbone, ApplicationRouter) {
 			var router = new ApplicationRouter($('#content'));
 
-			var navView = new NavView({
+			var navigationView = new NavigationView({
 				el: $('div.nav')[0],
 				router: router
 			}).render();

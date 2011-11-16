@@ -1,8 +1,8 @@
 define([
 	'underscore',
 	'backbone',
-	'plugin/text!templates/nav.tmpl'
-], function(_, Backbone, homeTemplate) {
+	'plugin/text!templates/navigation.tmpl'
+], function(_, Backbone, navigationTemplate) {
 	return Backbone.View.extend({
 		initialize: function() {
 			_.bindAll(this);
@@ -36,7 +36,7 @@ define([
 		 * Render the template content into a new div-element
 		 */
 		render: function() {
-			var template = _.template(homeTemplate, {});
+			var template = _.template(navigationTemplate, {});
 			$(this.el).html(template);
 
 			return this;
