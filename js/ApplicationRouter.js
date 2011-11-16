@@ -1,6 +1,12 @@
 define(
-	['views/HomeView', 'views/AtView', 'views/DuisView', 'views/LoremView', 'views/NotFoundView'], 
-	function(HomeView, AtView, DuisView, LoremView, NotFoundView) {
+	[
+		'backbone',
+		'views/HomeView',
+		'views/AtView',
+		'views/DuisView',
+		'views/LoremView',
+		'views/NotFoundView'
+	], function(Backbone, HomeView, AtView, DuisView, LoremView, NotFoundView) {
 		return Backbone.Router.extend({
 			initialize: function(el) {
 				this.el = el;

@@ -1,4 +1,8 @@
-define(['plugin/text!templates/lorem.tmpl'], function(loremTemplate) {
+define([
+	'underscore',
+	'backbone',
+	'plugin/text!templates/lorem.tmpl'
+], function(_, Backbone, loremTemplate) {
 	return Backbone.View.extend({
 		/*
 		 * Render the template content into a new div-element

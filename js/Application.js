@@ -3,6 +3,7 @@ require.config({
 	paths: {
 		'jquery': 'http://code.jquery.com/jquery-1.7.0.min',
 		'underscore': 'http://documentcloud.github.com/underscore/underscore-min',
+		'backbone': 'https://raw.github.com/jrburke/backbone/optamd3/backbone',
 		'plugin/css': 'https://raw.github.com/VIISON/RequireCSS/master/css',
 		'plugin/text':	'http://requirejs.org/docs/release/1.0.1/minified/text'
 	}
@@ -10,29 +11,23 @@ require.config({
 
 require([
 	'jquery',
-	'underscore',
+	'backbone',
 	'plugin/css!http://twitter.github.com/bootstrap/1.4.0/bootstrap.min',
 	'plugin/css!css/style'
-	], function($, _) {
-
-		// Assign underscore global
-		window._ = _;
+	], function($, Backbone) {
+		// Override View.remove()'s default behavior
+		Backbone.View = Backbone.View.extend({
+			remove: function() {
+				// Empty the element and remove it from the DOM while preserving events
+				$(this.el).empty().detach();
 		
-		require(['http://documentcloud.github.com/backbone/backbone-min.js'], function() {
-			// Override View.remove()'s default behavior
-			Backbone.View = Backbone.View.extend({
-				remove: function() {
-					// Empty the element and remove it from the DOM while preserving events
-					$(this.el).empty().detach();
-			
-					return this;
-				}
-			});
+				return this;
+			}
+		});
 
-			require(['js/ApplicationRouter'], function(ApplicationRouter) {				
-				var router = new ApplicationRouter($('#content'));
-		    	Backbone.history.start();
-			});
+		require(['backbone', 'js/ApplicationRouter'], function(Backbone, ApplicationRouter) {
+			var router = new ApplicationRouter($('#content'));
+	    	Backbone.history.start();
 		});
 	}
 );

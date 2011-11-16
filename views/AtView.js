@@ -1,4 +1,8 @@
-define(['plugin/text!templates/at.tmpl'], function(atTemplate) {
+define([
+	'underscore',
+	'backbone',
+	'plugin/text!templates/at.tmpl'
+], function(_, Backbone, atTemplate) {
 	return Backbone.View.extend({
 		/*
 		 * Render the template content into a new div-element

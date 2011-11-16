@@ -1,4 +1,8 @@
-define(['plugin/text!templates/home.tmpl'], function(homeTemplate) {
+define([
+	'underscore',
+	'backbone',
+	'plugin/text!templates/home.tmpl'
+], function(_, Backbone, homeTemplate) {
 	return Backbone.View.extend({
 		// Register events for clicking on the buttons
 		events: {
