@@ -7,7 +7,7 @@ define([
 		initialize: function() {
 			_.bindAll(this);
 
-			// Bind to routing events to highlight active navigation entry
+			// Bind to routing events to highlight the active navigation entry
 			this.options.router.bind('all', _.bind(function(event) {
 				var routeMatch = event.match(/route:(.+)/);
 
